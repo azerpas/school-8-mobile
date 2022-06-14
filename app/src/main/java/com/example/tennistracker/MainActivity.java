@@ -3,7 +3,6 @@ package com.example.tennistracker;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.tennistracker.repositories.PlayerRepository;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,11 +18,15 @@ import com.example.tennistracker.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private static final String[] paths = {"item 1", "item 2", "item 3"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +48,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-
-        Intent getPlayers = new Intent(this, PlayerRepository.class);
-        startService(getPlayers);
     }
 
     @Override
@@ -79,4 +78,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }
