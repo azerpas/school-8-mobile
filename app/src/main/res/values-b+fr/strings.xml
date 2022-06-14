@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tennis Tracker</string>
+    <string name="action_settings">Réglages</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Matchs</string>
+    <string name="second_fragment_label">Créer un match</string>
+    <string name="next">Suivant</string>
+    <string name="previous">Précédent</string>
+
+    <string name="hello_first_fragment">Les matchs enregistrés</string>
+    <string name="hello_second_fragment">Remplissez les détails du match: %1$s</string>
+</resources>
