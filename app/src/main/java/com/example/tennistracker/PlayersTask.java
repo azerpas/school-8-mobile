@@ -16,7 +16,7 @@ public class PlayersTask extends AsyncTask<String, Integer, Void> {
     protected Void doInBackground(String... jsonString) {
         ObjectMapper mapper = new ObjectMapper();
         try {
-            Player lib = mapper.readValue(jsonString[0], Player.class);
+            Player[] players = mapper.readValue(jsonString[0], Player[].class);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }

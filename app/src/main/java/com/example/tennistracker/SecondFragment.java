@@ -21,8 +21,12 @@ public class SecondFragment extends Fragment implements AdapterView.OnItemSelect
     private FragmentSecondBinding binding;
     private View view;
     private Spinner spinner;
+    private PlayersAdapter playersAdapter;
     private Handler handler;
-    private static final String[] paths = {"item 1", "item 2", "item 3"};
+    private static final Player[] players = {
+        new Player("104925","Novak","Djokovic","R","19870522","SRB","188","Q5812"),
+        new Player("106421","Daniil","Medvedev","R","19960211","RUS","198","Q21622022")
+    };
 
     @Override
     public View onCreateView(
@@ -42,12 +46,10 @@ public class SecondFragment extends Fragment implements AdapterView.OnItemSelect
 
         handler = new Handler();
 
+        playersAdapter = new PlayersAdapter(view.getContext(), android.R.layout.simple_spinner_item, paths);
         spinner = (Spinner)view.findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(),
-                android.R.layout.simple_spinner_item, paths);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+        // adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(playersAdapter);
 
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
