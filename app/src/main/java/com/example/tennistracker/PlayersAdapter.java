@@ -1,12 +1,21 @@
+package com.example.tennistracker;
+
+import android.content.Context;
+import android.graphics.Color;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class PlayersAdapter extends ArrayAdapter<Player> {
 
-    ArrayList<Player> players = new ArrayList<Player>(); 
+    Player[] players;
     ArrayList<String> plyrs = new ArrayList<String>(); 
 
-    public PlayersAdapter(Context context, int resource, int textViewResourceId, ArrayList<Player> objects) {
-        super(context, resource, textViewResourceId, objects);
+    public PlayersAdapter(Context context, int textViewResourceId, Player[] objects) {
+        super(context, textViewResourceId, objects);
         players = objects;
 
         // Launch the Task to retrieve the Players from the DB/JSON

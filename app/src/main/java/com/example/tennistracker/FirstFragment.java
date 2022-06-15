@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -43,9 +44,9 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        matchsList = (ListView) findViewById(R.id.matchsListView);
+        matchsList = (ListView) getView().findViewById(R.id.matchsListView);
 
-        matchsAdapter = new MatchsAdapter(view.getContext(), android.R.layout.list_view_items, matchs);
+        matchsAdapter = new MatchsAdapter(getView().getContext(), R.layout.list_view_matchs, matchs);
         matchsList.setAdapter(matchsAdapter);
     }
 

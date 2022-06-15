@@ -1,10 +1,19 @@
+package com.example.tennistracker;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class MatchsAdapter extends ArrayAdapter<Match> {
-    ArrayList<Match> matchs = new ArrayList<Match>(); 
+    Match[] matchs;
 
-    public MatchsAdapter(Context context, int resource, int textViewResourceId, ArrayList<Match> objects) {
-        super(context, resource, textViewResourceId, objects);
+    public MatchsAdapter(Context context, int textViewResourceId, Match[] objects) {
+        super(context, textViewResourceId, objects);
         matchs = objects;
 
         // Launch the Task to retrieve the Players from the DB/JSON
@@ -21,9 +30,9 @@ public class MatchsAdapter extends ArrayAdapter<Match> {
 
         View v = convertView;
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        v = inflater.inflate(R.layout.list_view_items, null);
+        v = inflater.inflate(R.layout.list_view_matchs, null);
         TextView textView = (TextView) v.findViewById(R.id.textView);
-        textView.setText(matchs.get(position).getId());
+        textView.setText(String.valueOf(matchs[position].getId()));
         return v;
 
     }

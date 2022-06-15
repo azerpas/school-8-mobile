@@ -1,3 +1,5 @@
+package com.example.tennistracker;
+
 public class Match {
     public int id;
 
@@ -53,16 +55,4 @@ public class Match {
         this.player2 = player2;
     }
 
-}
-
-public class Set
-{
-    public int gamesWonPlayer1;
-    public int gamesWonPlayer2;
-}
-
-public class Game
-{
-    public int scorePlayer1;
-    public int scorePlayer2;
 }
