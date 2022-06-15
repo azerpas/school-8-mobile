@@ -7,6 +7,8 @@ public class PlayersAdapter extends ArrayAdapter<Player> {
 
     public PlayersAdapter(Context context, int resource, int textViewResourceId, ArrayList<Player> objects) {
         super(context, resource, textViewResourceId, objects);
+        players = objects;
+
         // Launch the Task to retrieve the Players from the DB/JSON
         // this.plyrs = ...
     }

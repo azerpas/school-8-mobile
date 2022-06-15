@@ -46,10 +46,13 @@ public class SecondFragment extends Fragment implements AdapterView.OnItemSelect
 
         handler = new Handler();
 
-        playersAdapter = new PlayersAdapter(view.getContext(), android.R.layout.simple_spinner_item, paths);
+        // Maybe try to launch the Task here ?
+
+        playersAdapter = new PlayersAdapter(view.getContext(), android.R.layout.simple_spinner_item, players);
         spinner = (Spinner)view.findViewById(R.id.spinner);
         // adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(playersAdapter);
+        // https://stackoverflow.com/questions/1625249/android-how-to-bind-spinner-to-custom-object-list
 
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override

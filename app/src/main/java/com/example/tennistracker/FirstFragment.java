@@ -13,7 +13,13 @@ import com.example.tennistracker.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
 
+    ListView matchsList;
     private FragmentFirstBinding binding;
+    private MatchsAdapter matchsAdapter;
+    private static final Match[] matchs = {
+        new Match(0, 42, 45),
+        new Match(1, 47, 38)
+    };
 
     @Override
     public View onCreateView(
@@ -36,6 +42,11 @@ public class FirstFragment extends Fragment {
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
+
+        matchsList = (ListView) findViewById(R.id.matchsListView);
+
+        matchsAdapter = new MatchsAdapter(view.getContext(), android.R.layout.list_view_items, matchs);
+        matchsList.setAdapter(matchsAdapter);
     }
 
     @Override
