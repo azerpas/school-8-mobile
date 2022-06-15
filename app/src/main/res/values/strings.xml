@@ -6,6 +6,8 @@
     <string name="second_fragment_label">Create Match</string>
     <string name="next">Next</string>
     <string name="create_match">Create</string>
+    <string name="spinner_helper">Select your player</string>
+    <string name="input_player1">Select the 1st player</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>

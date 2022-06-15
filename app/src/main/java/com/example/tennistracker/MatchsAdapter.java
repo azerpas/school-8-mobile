@@ -32,7 +32,7 @@ public class MatchsAdapter extends ArrayAdapter<Match> {
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v = inflater.inflate(R.layout.list_view_matchs, null);
         TextView textView = (TextView) v.findViewById(R.id.textView);
-        textView.setText(String.valueOf(matchs[position].getId()));
+        textView.setText("Match n°" + String.valueOf(matchs[position].getId()));
         return v;
 
     }
