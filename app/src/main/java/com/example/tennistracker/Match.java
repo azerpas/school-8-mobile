@@ -1,16 +1,19 @@
 package com.example.tennistracker;
 
+import android.net.Uri;
+
 public class Match {
     public int id;
-
+    public String place;
     public double latitude;
     public double longitude;
     public Player player1;
     public Player player2;
     // public ArrayList<Set> sets;
 
-    public Match(int id, double latitude, double longitude) {
+    public Match(int id, String place, double latitude, double longitude) {
         this.id = id;
+        this.place = place;
         this.latitude = latitude;
         this.longitude = longitude;
     }
@@ -21,6 +24,14 @@ public class Match {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
     }
 
     public double getLatitude() {
@@ -54,5 +65,10 @@ public class Match {
     public void setPlayer2(Player player2) {
         this.player2 = player2;
     }
+
+    public Uri getUriLocation() {
+        return Uri.parse("geo:" + getLatitude() + "," + getLongitude());
+    }
+    // https://developer.android.com/training/basics/intents/sending#complete-example
 
 }

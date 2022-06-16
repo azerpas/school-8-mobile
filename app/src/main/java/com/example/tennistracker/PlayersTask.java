@@ -11,6 +11,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class PlayersTask extends AsyncTask<String, Integer, Void> {
     protected Void doInBackground(String... jsonString) {
@@ -29,7 +33,7 @@ public class PlayersTask extends AsyncTask<String, Integer, Void> {
     protected void onPostExecute(Long result) {
         // Call the result handler at the end
     }
-    /*
+
     public void fetchPlayers() {
         new Thread(new Runnable() {
             @Override
@@ -43,24 +47,24 @@ public class PlayersTask extends AsyncTask<String, Integer, Void> {
                     ResultSet resultSet = statement.executeQuery();
                     while (resultSet.next()) {
                         Player p = new Player(
-                            resultSet.getString("id"), 
-                            resultSet.getString("first"),
-                            resultSet.getString("last"), 
-                            resultSet.getString("hand"), 
-                            resultSet.getString("dob"), 
-                            resultSet.getString("ioc"), 
-                            resultSet.getString("height"),
-                            resultSet.getString("wikidata")
+                                resultSet.getString("id"),
+                                resultSet.getString("first"),
+                                resultSet.getString("last"),
+                                resultSet.getString("hand"),
+                                resultSet.getString("dob"),
+                                resultSet.getString("ioc"),
+                                resultSet.getString("height"),
+                                resultSet.getString("wikidata")
                         );
                     }
-                    players.Add(p);
+                    // players.Add(p);
 
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                
+
             }}).start();
-    } 
-    */
+    }
+
 }
 

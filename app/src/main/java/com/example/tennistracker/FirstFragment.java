@@ -18,8 +18,8 @@ public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
     private MatchsAdapter matchsAdapter;
     private static final Match[] matchs = {
-        new Match(0, 42, 45),
-        new Match(1, 47, 38)
+        new Match(0, "Roland Garros", 48.84581858596526, 2.253548000789472),
+        new Match(1, "Wimbledon", 51.435517926388215, -0.2140563891347529)
     };
 
     @Override

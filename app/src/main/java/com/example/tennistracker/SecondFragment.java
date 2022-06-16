@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.tennistracker.databinding.FragmentSecondBinding;
+import com.example.tennistracker.placeholder.Place;
 
 public class SecondFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
