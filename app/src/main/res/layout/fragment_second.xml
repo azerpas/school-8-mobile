@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/spinner_helper"
-        android:minHeight="48dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textview_second"
         android:text="@string/input_player1"
@@ -24,7 +13,41 @@
         android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Spinner
+        android:id="@+id/spinner_player1"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/spinner_helper"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview_second"/>
+
+    <TextView
+        android:id="@+id/spinner_player2_label"
+        android:text="@string/input_player2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_player1"
+        />
+
+    <Spinner
+        android:id="@+id/spinner_player2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/spinner_helper"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_player2_label"/>
+
 
     <Button
         android:id="@+id/button_second"
@@ -33,6 +56,6 @@
         android:text="@string/create_match"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_player2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

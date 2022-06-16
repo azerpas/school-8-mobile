@@ -8,6 +8,8 @@
     <string name="create_match">Créer</string>
     <string name="spinner_helper">Sélectionnez votre joueur</string>
     <string name="input_player1">Choisissez le joueur 1</string>
+    <string name="input_player2">Choisissez le joueur 2</string>
+
 
     <string name="hello_first_fragment">Les matchs enregistrés</string>
     <string name="hello_second_fragment">Remplissez les détails du match: %1$s</string>

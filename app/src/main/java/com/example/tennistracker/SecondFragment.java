@@ -21,7 +21,9 @@ public class SecondFragment extends Fragment implements AdapterView.OnItemSelect
     private FragmentSecondBinding binding;
     private View view;
     private Spinner spinner;
+    private Spinner spinner_player2;
     private PlayersAdapter playersAdapter;
+    private PlayersAdapter playersAdapter2;
     private Handler handler;
     private static final Player[] players = {
         new Player("104925","Novak","Djokovic","R","19870522","SRB","188","Q5812"),
@@ -49,9 +51,12 @@ public class SecondFragment extends Fragment implements AdapterView.OnItemSelect
         // Maybe try to launch the Task here ?
 
         playersAdapter = new PlayersAdapter(view.getContext(), android.R.layout.simple_spinner_item, players);
-        spinner = (Spinner)view.findViewById(R.id.spinner);
+        playersAdapter2 = new PlayersAdapter(view.getContext(), android.R.layout.simple_spinner_item, players);
+        spinner = (Spinner)view.findViewById(R.id.spinner_player1);
+        spinner_player2 = (Spinner)view.findViewById(R.id.spinner_player2);
         // adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(playersAdapter);
+        spinner_player2.setAdapter(playersAdapter2);
         // https://stackoverflow.com/questions/1625249/android-how-to-bind-spinner-to-custom-object-list
 
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
