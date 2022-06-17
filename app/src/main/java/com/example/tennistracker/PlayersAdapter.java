@@ -26,7 +26,7 @@ public class PlayersAdapter extends ArrayAdapter<Player> {
         super(context, textViewResourceId, objects);
         players = objects;
         PlayersTask playersTask = new PlayersTask();
-        playersTask.fetchPlayers();
+        //playersTask.fetchPlayers();
         // Launch the Task to retrieve the Players from the DB/JSON
         // this.plyrs = ...
     }
@@ -94,7 +94,7 @@ public class PlayersAdapter extends ArrayAdapter<Player> {
                 public void run() {
                     ArrayList<Player> plyrs = new ArrayList<Player>();
                     try {
-                        Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/tracker", "azerpas", "123456");
+                        Connection connection = DriverManager.getConnection("jdbc:postgresql://10.0.2.2:5432/tracker", "azerpas", "123456");
 
                         String sql = "SELECT * FROM Players";
                         PreparedStatement statement = connection.prepareStatement(sql);

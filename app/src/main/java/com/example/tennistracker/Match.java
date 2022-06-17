@@ -1,6 +1,8 @@
 package com.example.tennistracker;
 
 import android.net.Uri;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 public class Match {
     public int id;
@@ -69,6 +71,5 @@ public class Match {
     public Uri getUriLocation() {
         return Uri.parse("geo:" + getLatitude() + "," + getLongitude());
     }
-    // https://developer.android.com/training/basics/intents/sending#complete-example
 
 }

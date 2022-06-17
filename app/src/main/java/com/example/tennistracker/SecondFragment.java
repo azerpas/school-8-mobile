@@ -12,6 +12,7 @@ import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.tennistracker.databinding.FragmentSecondBinding;
@@ -46,20 +47,22 @@ public class SecondFragment extends Fragment implements AdapterView.OnItemSelect
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        FragmentActivity activity = (MainActivity) requireActivity();
+        //activity.hideFab();
         handler = new Handler();
 
         // Maybe try to launch the Task here ?
 
-        playersAdapter = new PlayersAdapter(view.getContext(), android.R.layout.simple_spinner_item, players);
-        playersAdapter2 = new PlayersAdapter(view.getContext(), android.R.layout.simple_spinner_item, players);
-        spinner = (Spinner)view.findViewById(R.id.spinner_player1);
-        spinner_player2 = (Spinner)view.findViewById(R.id.spinner_player2);
-        // adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(playersAdapter);
-        spinner_player2.setAdapter(playersAdapter2);
-        // https://stackoverflow.com/questions/1625249/android-how-to-bind-spinner-to-custom-object-list
-
+        try {
+            playersAdapter = new PlayersAdapter(view.getContext(), android.R.layout.simple_spinner_item, players);
+            playersAdapter2 = new PlayersAdapter(view.getContext(), android.R.layout.simple_spinner_item, players);
+            spinner = (Spinner)view.findViewById(R.id.spinner_player1);
+            spinner_player2 = (Spinner)view.findViewById(R.id.spinner_player2);
+            spinner.setAdapter(playersAdapter);
+            spinner_player2.setAdapter(playersAdapter2);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         binding.buttonSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

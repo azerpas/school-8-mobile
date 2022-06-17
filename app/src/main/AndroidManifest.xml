@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tennistracker">
 
+    <!-- Access to Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Access to Network -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TennisTracker"
         tools:targetApi="31">
+        <activity
+            android:name=".ViewMatch"
+            android:exported="false"
+            android:label="@string/title_activity_view_match"
+            android:theme="@style/Theme.TennisTracker.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -27,14 +27,12 @@ public class MatchsAdapter extends ArrayAdapter<Match> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         View v = convertView;
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         v = inflater.inflate(R.layout.list_view_matchs, null);
         TextView textView = (TextView) v.findViewById(R.id.textView);
-        textView.setText("Match n°" + String.valueOf(matchs[position].getId()));
+        textView.setText("Match n°" + String.valueOf(matchs[position].getId()) + " at " + matchs[position].getPlace());
         return v;
-
     }
 
 }

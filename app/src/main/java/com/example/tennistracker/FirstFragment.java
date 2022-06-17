@@ -1,9 +1,11 @@
 package com.example.tennistracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -48,6 +50,17 @@ public class FirstFragment extends Fragment {
 
         matchsAdapter = new MatchsAdapter(getView().getContext(), R.layout.list_view_matchs, matchs);
         matchsList.setAdapter(matchsAdapter);
+        matchsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Match match = (Match)matchsList.getAdapter().getItem(position);
+                Intent intent = new Intent(getActivity(), ViewMatch.class);
+                intent.putExtra("id", match.id);
+                intent.putExtra("latitude", match.latitude);
+                intent.putExtra("longitude", match.longitude);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
