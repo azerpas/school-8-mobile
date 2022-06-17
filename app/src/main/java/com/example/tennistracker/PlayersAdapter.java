@@ -20,7 +20,6 @@ import java.util.ArrayList;
 public class PlayersAdapter extends ArrayAdapter<Player> {
 
     Player[] players;
-    ArrayList<String> plyrs = new ArrayList<String>(); 
 
     public PlayersAdapter(Context context, int textViewResourceId, Player[] objects) {
         super(context, textViewResourceId, objects);
@@ -28,7 +27,6 @@ public class PlayersAdapter extends ArrayAdapter<Player> {
         PlayersTask playersTask = new PlayersTask();
         //playersTask.fetchPlayers();
         // Launch the Task to retrieve the Players from the DB/JSON
-        // this.plyrs = ...
     }
 
     @Override

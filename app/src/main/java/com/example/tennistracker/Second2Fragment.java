@@ -21,7 +21,12 @@ public class Second2Fragment extends Fragment {
             Bundle savedInstanceState
     ) {
 
-        binding = FragmentSecond2Binding.inflate(inflater, container, false);
+        try {
+            binding = FragmentSecond2Binding.inflate(inflater, container, false);
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
         return binding.getRoot();
 
     }
